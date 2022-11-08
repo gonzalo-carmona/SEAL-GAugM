@@ -4,8 +4,13 @@ backup/
 results/
 software/
 dataset/
-__pycache__/
+*__pycache__/
 baselines/
 temp*
 tmp_vis.png
 *.pt
+.vscode/
+.DS_Store
+*.py[cod]
+*$py.class
+*.log
