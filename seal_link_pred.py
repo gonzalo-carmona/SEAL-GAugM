@@ -19,7 +19,7 @@ from torch.utils.data import DataLoader
 
 from torch_sparse import coalesce
 from torch_geometric.datasets import Planetoid
-from custom_datasets import Flickr, BlogCatalog, PPI, AirUSA
+from custom_datasets import *
 from torch_geometric.data import Dataset, InMemoryDataset, DataLoader
 from torch_geometric.utils import to_networkx, to_undirected
 

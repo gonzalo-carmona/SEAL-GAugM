@@ -154,3 +154,41 @@ class AirUSA(InMemoryDataset):
     
     def __repr__(self) -> str:
         return f'{self.name}()'
+        
+class KarateClub(InMemoryDataset):
+    def __init__(self, root, name, transform=None, pre_transform=None, pre_filter=None):
+        super().__init__(root, transform, pre_transform, pre_filter)
+        self.data, self.slices = torch.load(self.processed_paths[0])
+        self.name = name
+
+    @property
+    def raw_file_names(self):
+        return ['KarateClub_adj.pkl', 'KarateClub_labels.pkl']
+
+    @property
+    def processed_file_names(self):
+        return 'data.pt'
+
+    def download(self):
+        pass
+
+    def process(self):
+        adj = scsp.find(np.load('dataset/KarateClub/raw/KarateClub_adj.pkl', allow_pickle=True))
+        edge_index = torch.Tensor(np.array([adj[0], adj[1]])).type(torch.int64)
+        labels = np.load('dataset/KarateClub/raw/KarateClub_labels.pkl', allow_pickle=True)
+        y = torch.Tensor(labels).type(torch.int64)
+        feats = np.load('dataset/KarateClub/raw/KarateClub_features.pkl', allow_pickle=True)
+        x = torch.Tensor(feats).type(torch.int64)
+        data_list = [Data(x=x, edge_index=edge_index, y=y)]
+        
+        if self.pre_filter is not None:
+            data_list = [data for data in data_list if self.pre_filter(data)]
+
+        if self.pre_transform is not None:
+            data_list = [self.pre_transform(data) for data in data_list]
+        
+        data, slices = self.collate(data_list)
+        torch.save((data, slices), self.processed_paths[0])
+    
+    def __repr__(self) -> str:
+        return f'{self.name}()'

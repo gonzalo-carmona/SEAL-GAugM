@@ -6,10 +6,10 @@ import argparse
 import numpy as np
 import scipy.sparse as sp
 import torch
-from models.GCN_dgl import GCN
-from models.GAT_dgl import GAT
-from models.GSAGE_dgl import GraphSAGE
-from models.JKNet_dgl import JKNet
+from node_models.GCN_dgl import GCN
+from node_models.GAT_dgl import GAT
+from node_models.GSAGE_dgl import GraphSAGE
+from node_models.JKNet_dgl import JKNet
 
 def sample_graph_det(adj_orig, A_pred, remove_pct, add_pct):
     if remove_pct == 0 and add_pct == 0:
@@ -53,6 +53,7 @@ if __name__ == "__main__":
     parser.add_argument('--gnn', type=str, default='gcn')
     parser.add_argument('--gpu', type=str, default='0')
     parser.add_argument('--i', type=str, default='2')
+    parser.add_argument('--original_setting', action='store_true')
     args = parser.parse_args()
 
     if args.gpu == '-1':
@@ -72,10 +73,17 @@ if __name__ == "__main__":
 
     params_all = json.load(open('best_parameters.json', 'r'))
     params = params_all['GAugM'][args.dataset][args.gnn]
-    # i = params['i']
-    i = args.i
+
+    if not args.original_setting:
+        i = args.i
+    else:
+        i = 0
+
     A_pred = pickle.load(open(f'data/edge_probabilities/{args.dataset}_graph_{i}_logits.pkl', 'rb'))
-    adj_pred = sample_graph_det(adj_orig, A_pred, params['rm_pct'], params['add_pct'])
+    if args.original_setting:
+        adj_pred = sample_graph_det(adj_orig, A_pred, 0, 0)
+    else:
+        adj_pred = sample_graph_det(adj_orig, A_pred, params['rm_pct'], params['add_pct'])
 
     gnn = args.gnn
     if gnn == 'gcn':
@@ -87,9 +95,22 @@ if __name__ == "__main__":
     elif gnn == 'jknet':
         GNN = JKNet
 
+    res_dir = os.path.join('results/{}_GAugM'.format(args.dataset))
+
+    if not os.path.exists(res_dir):
+        os.makedirs(res_dir)
+
+    print('Los resultados se guardarán en ' + res_dir)
+
     accs = []
     for _ in range(30):
         gnn = GNN(adj_pred, adj_pred, features, labels, tvt_nids, print_progress=True, cuda=gpu, epochs=200)
         acc, _, _ = gnn.fit()
         accs.append(acc)
-    print(f'Micro F1: {np.mean(accs):.6f}, std: {np.std(accs):.6f}')
+
+    message = f'Micro F1: {np.mean(accs):.6f}, std: {np.std(accs):.6f}'
+    print(message)
+
+    with open('{}/{}{}_performance.txt'.format(res_dir, args.gnn, i), 'w') as f:
+        f.write(message)
+        f.close()

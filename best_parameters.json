@@ -254,6 +254,42 @@
         }
     },
     "GAugM": {
+		"KarateCluboriginal": {
+			"gcn": {
+				"rm_pct": 0,
+				"add_pct": 0
+			},
+			"gsage": {
+				"rm_pct": 0,
+				"add_pct": 0
+			},
+			"gat":{
+				"rm_pct": 0,
+				"add_pct": 0
+			},
+			"jknet":{
+				"rm_pct": 0,
+				"add_pct": 0
+			}
+		},
+		"KarateClub": {
+			"gcn": {
+				"rm_pct": 30,
+				"add_pct": 34
+			},
+			"gsage": {
+				"rm_pct": 34,
+				"add_pct": 34
+			},
+			"gat":{
+				"rm_pct": 20,
+				"add_pct": 34
+			},
+			"jknet":{
+				"rm_pct": 33,
+				"add_pct": 28
+			}
+		},
         "Cora": {
             "gcn": {
                 "f1_score": 0.8516,
@@ -289,6 +325,10 @@
                 "f1_score": 0.7225,
                 "std": 0.0041,
                 "i": 2,
+                "rm_pct": 0,
+                "add_pct": 46
+            },
+			"gat": {
                 "rm_pct": 0,
                 "add_pct": 46
             },

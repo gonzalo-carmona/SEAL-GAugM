@@ -138,6 +138,7 @@ if __name__=='__main__':
     parser.add_argument('--best_run', type=int, default='25')
     parser.add_argument('--k', type=int, default='30')
     parser.add_argument('--batch_size', type=int, default='32')
+    parser.add_argument('--save_appendix', type=str, default='defaultparams')
     args = parser.parse_args()
     
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -160,7 +161,7 @@ if __name__=='__main__':
     else:
         dataset_class = 'SEALDataset'
     
-    datasetlist = ['Cora', 'CiteSeer', 'BlogCatalog', 'AirUSA', 'Flickr', 'PPI']
+    datasetlist = ['Cora', 'CiteSeer', 'BlogCatalog', 'AirUSA', 'Flickr', 'PPI', 'KarateClub']
     
     if argdataset not in datasetlist:
         raise Exception("""Se introdujo un dataset no válido. Introducir un dataset
@@ -172,9 +173,10 @@ if __name__=='__main__':
     else:
         path = os.path.join('dataset', argdataset)
         dataset = eval(argdataset)(path, argdataset)
-     
+    
+    appendix = args.save_appendix
     try:
-        model_statedict = torch.load("results\\{}defaultparams\\run1_model_checkpoint{}.pth".format(argdataset, best_run))
+        model_statedict = torch.load("results\\{}{}\\run1_model_checkpoint{}.pth".format(argdataset, appendix, best_run))
     except:
         raise Exception("""El modelo SEAL no ha sido entrenado todavía para este dataset.
         Es necesario ejecutar seal_link_pred con el dataset correspondiente (Cora, CiteSeer, PPI, AirUSA, Flickr, BlogCatalog), y los siguientes argumentos:
