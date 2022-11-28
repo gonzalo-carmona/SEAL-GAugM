@@ -1,0 +1,4 @@
+python seal_link_pred.py --dataset AirUSA --num_hops 2 --use_feature --save_appendix defaultparams --train_node_embedding
+python seal_link_pred.py --dataset AirUSA --num_hops 2 --use_feature --save_appendix defaultparams --train_node_embedding --dynamic_train
+python seal_link_pred.py --dataset AirUSA --num_hops 2 --use_feature --save_appendix defaultparams --train_node_embedding --num_workers 8
+python seal_link_pred.py --dataset AirUSA --num_hops 2 --use_feature --save_appendix defaultparams --train_node_embedding --num_workers 8 --dynamic_train

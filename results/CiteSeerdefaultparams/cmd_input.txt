@@ -1,0 +1,1 @@
+python seal_link_pred.py --dataset CiteSeer --num_hops 2 --use_feature --train_node_embedding

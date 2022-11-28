@@ -1,0 +1,113 @@
+
+python seal_link_pred.py --dataset Cora --train_node_embedding --use_feature --num_hops 2 --save_appendix defaultparams
+Total number of parameters is 341730
+SortPooling k is set to 48
+AUC
+Run: 01, Epoch: 01, Loss: 0.5488, Valid: 87.52%, Test: 88.12%
+AUC
+Run: 01, Epoch: 02, Loss: 0.4283, Valid: 89.94%, Test: 91.17%
+AUC
+Run: 01, Epoch: 03, Loss: 0.3805, Valid: 90.60%, Test: 91.81%
+AUC
+Run: 01, Epoch: 04, Loss: 0.3374, Valid: 90.62%, Test: 91.81%
+AUC
+Run: 01, Epoch: 05, Loss: 0.3058, Valid: 90.47%, Test: 91.93%
+AUC
+Run: 01, Epoch: 06, Loss: 0.2821, Valid: 90.08%, Test: 91.65%
+AUC
+Run: 01, Epoch: 07, Loss: 0.2645, Valid: 88.39%, Test: 90.31%
+AUC
+Run: 01, Epoch: 08, Loss: 0.2460, Valid: 88.68%, Test: 90.78%
+AUC
+Run: 01, Epoch: 09, Loss: 0.2319, Valid: 87.49%, Test: 89.74%
+AUC
+Run: 01, Epoch: 10, Loss: 0.2202, Valid: 88.26%, Test: 89.90%
+AUC
+Run: 01, Epoch: 11, Loss: 0.2095, Valid: 86.94%, Test: 89.53%
+AUC
+Run: 01, Epoch: 12, Loss: 0.1989, Valid: 85.75%, Test: 88.69%
+AUC
+Run: 01, Epoch: 13, Loss: 0.1878, Valid: 85.99%, Test: 88.74%
+AUC
+Run: 01, Epoch: 14, Loss: 0.1810, Valid: 85.70%, Test: 88.70%
+AUC
+Run: 01, Epoch: 15, Loss: 0.1735, Valid: 85.52%, Test: 88.46%
+AUC
+Run: 01, Epoch: 16, Loss: 0.1651, Valid: 85.25%, Test: 88.27%
+AUC
+Run: 01, Epoch: 17, Loss: 0.1561, Valid: 85.43%, Test: 88.55%
+AUC
+Run: 01, Epoch: 18, Loss: 0.1493, Valid: 85.65%, Test: 88.68%
+AUC
+Run: 01, Epoch: 19, Loss: 0.1458, Valid: 84.84%, Test: 88.36%
+AUC
+Run: 01, Epoch: 20, Loss: 0.1373, Valid: 85.35%, Test: 88.56%
+AUC
+Run: 01, Epoch: 21, Loss: 0.1339, Valid: 84.73%, Test: 87.91%
+AUC
+Run: 01, Epoch: 22, Loss: 0.1291, Valid: 85.88%, Test: 88.74%
+AUC
+Run: 01, Epoch: 23, Loss: 0.1223, Valid: 85.51%, Test: 88.57%
+AUC
+Run: 01, Epoch: 24, Loss: 0.1178, Valid: 85.12%, Test: 88.42%
+AUC
+Run: 01, Epoch: 25, Loss: 0.1173, Valid: 84.59%, Test: 88.06%
+AUC
+Run: 01, Epoch: 26, Loss: 0.1174, Valid: 84.92%, Test: 88.23%
+AUC
+Run: 01, Epoch: 27, Loss: 0.1084, Valid: 85.04%, Test: 87.95%
+AUC
+Run: 01, Epoch: 28, Loss: 0.1024, Valid: 84.20%, Test: 87.94%
+AUC
+Run: 01, Epoch: 29, Loss: 0.1044, Valid: 85.90%, Test: 88.68%
+AUC
+Run: 01, Epoch: 30, Loss: 0.1023, Valid: 84.66%, Test: 88.12%
+AUC
+Run: 01, Epoch: 31, Loss: 0.0960, Valid: 85.16%, Test: 87.50%
+AUC
+Run: 01, Epoch: 32, Loss: 0.0959, Valid: 85.03%, Test: 88.13%
+AUC
+Run: 01, Epoch: 33, Loss: 0.0924, Valid: 84.82%, Test: 87.67%
+AUC
+Run: 01, Epoch: 34, Loss: 0.0933, Valid: 84.73%, Test: 88.05%
+AUC
+Run: 01, Epoch: 35, Loss: 0.0903, Valid: 85.39%, Test: 88.08%
+AUC
+Run: 01, Epoch: 36, Loss: 0.0845, Valid: 85.41%, Test: 88.02%
+AUC
+Run: 01, Epoch: 37, Loss: 0.0896, Valid: 84.98%, Test: 87.71%
+AUC
+Run: 01, Epoch: 38, Loss: 0.0835, Valid: 84.63%, Test: 87.58%
+AUC
+Run: 01, Epoch: 39, Loss: 0.0798, Valid: 85.28%, Test: 88.05%
+AUC
+Run: 01, Epoch: 40, Loss: 0.0784, Valid: 84.78%, Test: 87.26%
+AUC
+Run: 01, Epoch: 41, Loss: 0.0779, Valid: 85.43%, Test: 87.40%
+AUC
+Run: 01, Epoch: 42, Loss: 0.0767, Valid: 84.44%, Test: 87.41%
+AUC
+Run: 01, Epoch: 43, Loss: 0.0740, Valid: 84.33%, Test: 87.03%
+AUC
+Run: 01, Epoch: 44, Loss: 0.0708, Valid: 84.79%, Test: 87.65%
+AUC
+Run: 01, Epoch: 45, Loss: 0.0718, Valid: 84.74%, Test: 87.44%
+AUC
+Run: 01, Epoch: 46, Loss: 0.0650, Valid: 83.41%, Test: 86.52%
+AUC
+Run: 01, Epoch: 47, Loss: 0.0688, Valid: 83.31%, Test: 86.77%
+AUC
+Run: 01, Epoch: 48, Loss: 0.0668, Valid: 84.84%, Test: 87.06%
+AUC
+Run: 01, Epoch: 49, Loss: 0.0647, Valid: 83.61%, Test: 87.04%
+AUC
+Run: 01, Epoch: 50, Loss: 0.0659, Valid: 84.32%, Test: 86.96%
+AUC
+Run 01:
+Highest Valid: 90.62
+Highest Eval Point: 4
+   Final Test: 91.81
+AUC
+All runs:
+Highest Valid: 90.62 ± nan
+   Final Test: 91.81 ± nan

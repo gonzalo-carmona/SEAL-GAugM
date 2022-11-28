@@ -1,0 +1,6 @@
+python seal_link_pred.py --dataset KarateClub --num_hops 2 --use_feature --train_node_embedding --save_appendix demostracion
+python seal_link_pred.py --dataset KarateClub --num_hops 2 --use_feature --train_node_embedding --save_appendix demostracion
+python seal_link_pred.py --dataset KarateClub --num_hops 2 --use_feature --train_node_embedding --save_appendix demostracion
+python seal_link_pred.py --dataset KarateClub --num_hops 2 --use_feature --train_node_embedding --save_appendix demostracion
+python seal_link_pred.py --dataset KarateClub --num_hops 2 --use_feature --train_node_embedding --save_appendix demostracion
+python seal_link_pred.py --dataset KarateClub --num_hops 2 --use_feature --train_node_embedding --save_appendix demostracion

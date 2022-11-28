@@ -1,0 +1,1 @@
+python seal_link_pred.py --dataset Cora --train_node_embedding --use_feature --num_hops 2 --save_appendix defaultparams
